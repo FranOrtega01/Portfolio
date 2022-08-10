@@ -1,0 +1,15 @@
+#skills .mainSection .carousel{
+    @include flex(flex, row, center, center);
+    .github{
+        fill: rebeccapurple;
+    }
+}
+.carousel-item{
+
+    filter: grayscale(1);
+    transition: filter 750ms;
+    &.active{
+        cursor: pointer;
+        filter: grayscale(0);
+    }
+}

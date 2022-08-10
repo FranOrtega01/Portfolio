@@ -1,0 +1,89 @@
+footer{
+    @include flex (flex, column, center, center);
+    position: relative;
+    padding-top: 2rem;
+    width: 100%;
+    &::after{
+        content:"";
+        position: absolute;
+        height: 2px;
+        width: 20%;
+        border-radius: 30px;
+
+        left: 50%;
+        top:0;
+        transform:translateX(-50%);
+
+        background-color: $grey;
+        z-index: -1;
+    }
+    input{
+        display: none;
+    }
+    button{ //Circles
+        all: unset;
+        cursor: pointer;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        margin: 0 1.6rem;
+        transition: all 250ms;
+
+        position: relative;
+        &:hover{
+            transform: scale(1.3);
+            &::after{
+                position: absolute;
+                top: -2.4rem;
+                left: -2.4rem;
+                width: 100px;
+                color: $orange;
+                font-size: 1.3rem;
+                content: attr(aria-label);
+            }
+        }
+        &:nth-child(1){
+            background-color: $grey;
+        }
+        &:nth-child(2){
+            background-color: $blueGrey;
+        }
+        &:nth-child(3){
+            background-color: $lightGrey;
+        }
+        &:nth-child(4){
+            background-color: $orange;
+        }
+    }
+    p{
+        font-size: 1.6rem
+    }
+}
+.palette{
+    @include flex (flex, row, unset, unset);
+}
+
+.socialMedia{
+    margin: 1.6rem 0;
+    i{
+        font-size: 3rem;
+        margin: 0 1.6rem;
+        color: rgb(0, 0, 0);
+        &:hover{
+            animation: alternate shake 250ms linear;
+        }
+    }
+}
+
+@keyframes shake {
+    50%{
+        transform:rotate(-15deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(15deg) scale(1);
+    }
+}
+
+.copyright{
+    font-size: 1.5rem;
+}

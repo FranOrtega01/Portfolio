@@ -1,0 +1,53 @@
+// Color Palette
+$darkGrey:#202124;
+$grey: #2c2c31;
+$blueGrey: #667475;
+$lightGrey: rgb(199, 199, 199);
+$orange: #bd814b;
+
+$redFacher: #9e3333;
+$lightBlue: #26a69a;
+
+// Fonts
+@font-face {
+    font-family: BMT;
+    src: url(../fonts/BMT.otf);
+}
+@font-face {
+    font-family: SublimaLight;
+    src: url(../fonts/Sublima-Light.otf);
+}
+@font-face {
+    font-family: SublimaBold;
+    src: url(../fonts/Sublima-ExtraBold.otf);
+}
+// Functions
+@mixin flex($flex, $d, $jc, $ai){
+    display: $flex;
+    flex-direction: $d;
+    justify-content: $jc;
+    align-items:$ai;
+}
+
+// Main Classes
+.mainTitle{
+    font-size: 3rem;
+}
+
+// Reset
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body, html{
+    font-size: 10px;
+    font-family: "SublimaLight";
+    font-weight: 600;
+}
+

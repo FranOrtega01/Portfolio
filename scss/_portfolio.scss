@@ -1,0 +1,84 @@
+.cards{
+    @include flex(flex, row, center, unset);
+    flex-wrap: wrap;
+    // display: grid;
+    // margin: 20px auto;
+    // grid-template-columns: auto auto;
+    // grid-row: auto auto;
+    // grid-column-gap: 20px;
+    // grid-row-gap: 20px;
+    // justify-content: center;
+    
+}
+.portfolioCard{
+    height: 50rem;
+    width: 35rem;
+    border: 2px solid $blueGrey;
+    border-radius: 10px;
+    margin: 4rem 7rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border 1000ms;
+    img{
+        width: 100%;
+        height: auto;
+        transition: all 800ms;
+    }
+    &:hover{
+        border: 2px solid $lightGrey;
+
+        img{
+        transform: scale(1.2);
+        filter: blur(4px);
+        }
+        .overlay{
+        height: 100%;
+        opacity: 1;
+        }
+    }
+}
+
+.portfolioCard:first-child{
+    @extend .portfolioCard;
+    &:hover img{
+        transform:scale(1.2) translateY(40px) ;
+    }
+    
+}
+.portfolioCard:last-child{
+    @extend .portfolioCard;
+    display: grid;
+    place-items: center;
+    img:hover{
+        transform:scale(1.2);
+    } 
+}
+
+.overlay{
+    color:  $lightGrey;
+    font-family: "SublimaLight";
+    background-color: rgba( 0,0,0,0.7);
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 1000ms ;
+    h3{
+        font-size: 3rem;
+        font-weight: 600;
+        text-align:center;
+        margin:30% 0 30px 0;
+    }
+    p{
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        width: 75%;
+        margin: 0 auto;
+    }
+}

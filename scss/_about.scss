@@ -1,0 +1,77 @@
+#about{
+    margin: 0;
+}
+.aboutP{
+    text-align: justify;
+    font-size: 2rem;
+    color: $lightGrey;
+    width: 100%;
+    margin-bottom: 30px;
+    span{
+        color: $orange;
+    }
+}
+
+
+.info{
+    @include flex(flex, row, space-around, center);
+    width: 100%;
+    margin-top: 20px;
+    div{
+        @include flex(flex, row, unset, center);
+    }
+    svg{
+        color: $lightGrey;
+        width: 3rem;
+        height: 3rem;
+    }
+    p{
+        font-size: 1.5rem;
+        padding-left: 10px;
+        color: $lightGrey;
+    }
+}    
+.aboutCont{
+    @include flex (flex, column, unset, center);
+    width: 800px;
+    margin: 0 auto;
+}
+
+.moreInfo{
+    position: relative;
+    &::after{
+        position: absolute;
+        top: -2.4rem;
+        right: -10rem;
+        width: 100%;
+        color: $orange;
+        font-size: 1.3rem;
+        content: attr(aria-label);
+        opacity: 0;
+        transition: all 500ms;
+    }
+    &:hover::after{
+        opacity: 1;
+    }  
+}
+
+
+.cv{
+    margin: 5rem auto;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: $lightGrey;
+    border: 2px solid $lightGrey;
+    border-radius: 10px;
+    transition: all 350ms ease-in-out;
+    i{
+        padding-left: 10px;
+        transition: color 350ms ease-in-out;
+    }
+    &:hover{
+        border:2px solid $orange;
+        i{
+            color: $orange;
+        }
+    }
+}
